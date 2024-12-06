@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import form from "./routes/form.js";
 
 const app = express();
 const PORT = 8081;
@@ -26,5 +27,7 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   res.render("index", { title: "Mini Message Board", messages });
 });
+
+app.use("/new", form);
 
 app.listen(PORT, () => console.log(`Server is running at: localhost:${PORT}`));
