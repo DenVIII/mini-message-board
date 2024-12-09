@@ -1,3 +1,23 @@
-<form action="POST">
+<form
+  action="/new"
+  method="POST"
+>
   <h2><%= title%></h2>
+  <div>
+    <label for="user">User:</label>
+    <input
+      type="text"
+      name="user"
+      id="user"
+    />
+  </div>
+  <div>
+    <label for="message">Message:</label>
+    <input
+      type="text"
+      name="message"
+      id="message"
+    />
+  </div>
+  <button type="submit">Submit</button>
 </form>
