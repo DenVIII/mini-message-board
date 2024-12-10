@@ -1,12 +1,5 @@
 import messages from "../db.js";
 
-// @desc Render form
-// @route GET /new
-
-export function getForm(req, res, next) {
-  res.render("form", { title: "New Message Form" });
-}
-
 // @desc Create new post
 // @route POST /new
 
