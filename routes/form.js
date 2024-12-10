@@ -1,9 +1,10 @@
 import express from "express";
+import { createMessage, getForm } from "../controllers/formController.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("form", { title: "New Message Form" });
-});
+router.get("/", getForm);
+
+router.post("/", createMessage);
 
 export default router;
