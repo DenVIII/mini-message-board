@@ -3,8 +3,6 @@ import { createMessage, getForm } from "../controllers/formController.js";
 
 const router = express.Router();
 
-router.get("/", getForm);
-
 router.post("/", createMessage);
 
 export default router;
