@@ -13,5 +13,5 @@ export function getMessageById(req, res, next) {
     res.status(404).send(error);
   }
 
-  res.status(200).json(message);
+  res.status(200).render("messages/messagePage", { message });
 }
