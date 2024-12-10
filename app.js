@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import formRouter from "./routes/form.js";
 import indexRouter from "./routes/index.js";
-import messages from "./db.js";
+import messagesRouter from "./routes/messages.js";
 
 const app = express();
 const PORT = 8081;
@@ -16,5 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 app.use("/new", formRouter);
+app.use("/messages", messagesRouter);
 
 app.listen(PORT, () => console.log(`Server is running at: localhost:${PORT}`));

@@ -5,6 +5,7 @@ import messages from "../db.js";
 
 export function createMessage(req, res, next) {
   const newMessage = {
+    id: messages.length + 1,
     text: req.body.message,
     user: req.body.user,
     added: new Date(),

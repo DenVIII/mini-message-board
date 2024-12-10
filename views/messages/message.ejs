@@ -1,6 +1,13 @@
 <li>
   <div>User: <%= message.user %></div>
   <div>Message: <%= message.text %></div>
-  <div>Added: <%= message.added %></div>
+  <a href="/messages/<%= message.id %>"
+    ><button
+      id="details-btn"
+      data-msg-id="<%= message.id %>"
+    >
+      Details
+    </button></a
+  >
 </li>
 <br />
