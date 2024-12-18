@@ -1,6 +1,6 @@
 import messages from "../db.js";
 
-// @desc Render all messages
+// @desc Render message by it's id
 // @route GET /messages/:id
 
 export function getMessageById(req, res, next) {

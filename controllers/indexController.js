@@ -1,9 +1,10 @@
-import messages from "../db.js";
+import { getAllMessagesInTable } from "../db/queries.js";
 
 // @desc Render all messages
 // @route GET /
 
-export function getAllMessages(req, res, next) {
+export async function getAllMessages(req, res, next) {
+  const messages = await getAllMessagesInTable();
   res.render("index", { title: "Mini Message Board", messages });
 }
 
