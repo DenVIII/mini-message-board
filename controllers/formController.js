@@ -1,22 +1,19 @@
-import messages from "../db.js";
+import { insertMessage } from "../db/queries.js";
 
 // @desc Create new post
 // @route POST /new
 
-export function createMessage(req, res, next) {
+export async function createMessage(req, res, next) {
   const newMessage = {
-    id: messages.length + 1,
     text: req.body.message,
-    user: req.body.user,
-    added: new Date(),
+    username: req.body.user,
   };
-
-  if (!newMessage.text || !newMessage.user) {
+  if (!newMessage.text || !newMessage.username) {
     res.status(400).redirect("/");
     console.log(new Error("All fields must be filled"));
     return;
   }
 
-  messages.push(newMessage);
+  await insertMessage(newMessage);
   res.status(201).redirect("/");
 }

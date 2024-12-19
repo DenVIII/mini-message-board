@@ -5,17 +5,16 @@ export async function getAllMessagesInTable() {
   return rows;
 }
 
-/* export async function getMessageByIdFromTable(query) {
+export async function getMessageByIdFromTable(query) {
   const { rows } = await pool.query("SELECT * FROM messages WHERE id=$1", [
     query,
   ]);
-  console.log(rows);
-  return rows;
+  return rows[0];
 }
 
 export async function insertMessage(message) {
   await pool.query(
     "INSERT INTO messages (text, username, added) VALUES ($1, $2, NOW())",
-    [message.text, message.user]
+    [message.text, message.username]
   );
-} */
+}
